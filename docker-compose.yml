@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  config-server:
+    build:
+      context: ./config-service  # Путь к submodule
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5

@@ -1,0 +1,3 @@
+[submodule "config-service"]
+	path = config-service
+	url = https://github.com/Ilnar-Safiullin/ConfigServiceAstonApp.git
